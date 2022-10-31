@@ -1,0 +1,34 @@
+<div class="filtro container">
+  <div class="overflow-x">
+
+    
+    <a
+      v-for="(button, key) in buttons"
+      :key="key"
+      :href="button.link"
+      :class="(button.active) ? 'active' : '' "
+    >
+      {{button.name}}
+    </a>
+  </div>
+</div>
+
+<section class="last-news container">
+  <div>
+    <header>
+      <h3>Últimas novidades</h3>
+      <p>O que você vai assistir hoje?</p>
+    </header>
+
+    <div class="banner">
+      <div class="full-screen">
+        <h2>ONE PUNCH MAN TERÁ 3 TEMPORADA</h2>
+        <p>Como relatado anteriormente, a franquia baseada no mangá escrito por
+          ONE e ilustrado por Yusuke Murata, One Punch Man, divulgou um
+          comunicado confirmando a produção de uma terceira temporada da
+          adaptação para o anime […]
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

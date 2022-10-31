@@ -1,2 +1,2 @@
 # Ani.me Blog
-<img src="/img/capa-readme.png">
+<img src="/public/img/capa-readme.png">
