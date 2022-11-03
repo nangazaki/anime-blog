@@ -7,29 +7,8 @@
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
-    <header>
-      <div class="header container flex">
-        <div>
-          <h1><a href="/">Ani.me</a></h1>
-        </div>
-        <nav class="flex">
-          <ul>
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/lista">Lista</a></li>
-            <li><a href="/genero">Gêneros</a></li>
-            <li><a href="/novos-episodios">Novos Episódios</a></li>
-          </ul>
-          <div class="search">
-            <input type="text" name="buscar" placeholder="Buscar" />
-          </div>
-        </nav>
-      </div>
-    </header>
+    {{>_header}}
     {{{body}}}
-    <footer class="container">
-      <p>&copy; Todos os direitos reservados aos criadores e produtores dos
-        animes</p>
-      <p>Desenvolvido por: <a href="#">Helder Cambuta</a></p>
-    </footer>
+    {{>_footer}}
   </body>
 </html>

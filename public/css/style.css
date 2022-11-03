@@ -122,47 +122,39 @@ textarea {
 }
 
 /* Classes reutilizáveis */
-.container {
-  padding: 0 100px;
-}
 
-@media screen and (max-width: 425px) {
-  .container {
-    padding: 0 24px;
-  }
-}
-
-.flex {
-  display: flex;
-}
 
 
 /* Header */
 header {
-  margin: 30px 0 48px 0;
+  max-width: 1280px;
+  margin: 30px auto 40px; 
+  padding: 0 24px;
+  width: 100%;
 }
-header .header {
+header nav {
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
-header .header h1 a {
+.nav-logo h1 a {
   color: #00A3FF;
 }
-header .header nav {
+.nav-menu {
   display: flex;
   align-items: center;
-  gap: 72px;
 }
-header .header nav ul {
+.nav-menu .nav-menu-list {
   display: flex;
-  gap: 50px;
+  gap: 40px;
+  margin-right: 72px;
 }
-header .header nav ul a {
+.nav-menu .nav-menu-list .nav-menu-link {
   color: #f9f9f9;
-  padding: 0 0 4px;
+  padding-bottom: 4px;
   position: relative;
 }
-header .header nav ul a::after {
+.nav-menu .nav-menu-list .nav-menu-link::after {
   content: "";
   width: 0%;
   height: 2px;
@@ -170,34 +162,44 @@ header .header nav ul a::after {
   position: absolute;
   bottom: 0;
   left: 0;
-  transition: 0.5s ease-in-out;
+  transition: 0.5s ease;
 }
-header .header nav ul a:hover::after {
+.nav-menu .nav-menu-list .nav-menu-link:hover::after {
   width: 100%;
 }
-header .header nav .search input {
+.nav-menu .search input {
   padding: 12px 24px;
   background-color: #151B26;
   border-radius: 25px;
   color: #bfbfbf;
   font-weight: 500;
 }
-header .header nav .search::-moz-placeholder {
+.nav-menu .search::-moz-placeholder {
   color: #f9f9f9;
 }
-header .header nav .search:-ms-input-placeholder {
+.nav-menu .search:-ms-input-placeholder {
   color: #f9f9f9;
 }
-header .header nav .search::placeholder {
+.nav-menu .search::placeholder {
   color: #f9f9f9;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-menu .nav-menu-list,
+  .nav-menu .search {
+    display: none;
+  }
 }
 
 /* Filtro */
 .filtro {
-  margin-bottom: 80px;
+  max-width: 1280px;
+  margin: 0 auto 80px; 
+  padding: 0 24px;
+  width: 100%;
 }
 
-.overflow-x {
+.scroll-x {
   padding: 16px 0;
   display: grid;
   grid-auto-flow: column;
@@ -205,26 +207,25 @@ header .header nav .search::placeholder {
   width: 100%;
   overflow: auto;
   scrollbar-base-color: #00A3FF;
-  /* Works on Firefox */
 }
-.overflow-x * {
+.scroll-x * {
   scrollbar-width: thin;
   scrollbar-color: #00A3FF #151B26;
 }
-.overflow-x::-webkit-scrollbar {
+.scroll-x::-webkit-scrollbar {
   height: 6px;
 }
-.overflow-x::-webkit-scrollbar-track {
+.scroll-x::-webkit-scrollbar-track {
   background: #151B26;
   border-radius: 20px;
 }
-.overflow-x::-webkit-scrollbar-thumb {
+.scroll-x::-webkit-scrollbar-thumb {
   height: 4px;
   background: #00A3FF;
   border-radius: 20px;
   border: 0;
 }
-.overflow-x a {
+.scroll-x a {
   width: 108px;
   padding: 6px 12px;
   display: flex;
@@ -235,46 +236,49 @@ header .header nav .search::placeholder {
   color: #bfbfbf;
   transition: 0.5s;
 }
-.overflow-x a:hover {
+.scroll-x a:hover {
   background: #151B26;
   color: #f2f2f2;
   font-weight: 500;
 }
-.overflow-x .active {
+.scroll-x .active {
   background: #151B26;
   color: #f2f2f2;
   font-weight: 500;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   .filtro {
-    margin-bottom: 40px;
+    margin: 0 auto 40px;
   }
-  .overflow-x {
+  .scroll-x {
     gap: 12px;
   }
-  .overflow-x a {
+  .scroll-x a {
     width: 68px;
   }
 }
 
 /* Ultimas noticias */
 .ultimas-novidades {
-  margin-bottom: 80px;
+  max-width: 1280px;
+  margin: 0 auto 80px; 
+  padding: 0 24px;
+  width: 100%;
 }
-.ultimas-novidades header {
+.ultimas-novidades .header {
   margin-bottom: 40px;
 }
 @media screen and (max-width: 425px) {
   .ultimas-novidades {
     margin-bottom: 40px;
   }
-  .ultimas-novidades header {
+  .ultimas-novidades .header {
     margin-bottom: 20pxpx;
   }
 }
 
-.banner {
+.hero {
   width: 100%;
   height: 500px;
   max-height: 400px;
@@ -284,7 +288,7 @@ header .header nav .search::placeholder {
   background-position: center;
   border-radius: 8px;
 }
-.banner .full-screen {
+.hero .hero-full-screen {
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -293,28 +297,108 @@ header .header nav .search::placeholder {
   padding: 40px;
   background: linear-gradient(270deg, rgba(6, 9, 15, 0.32) 0%, rgba(6, 9, 15, 0.9) 100%);
 }
-.banner .full-screen p {
+.hero .hero-full-screen p {
   max-width: 500px;
 }
 @media screen and (max-width: 425px) {
-  .banner .full-screen {
+  .hero .hero-full-screen {
     padding: 20px;
   }
 }
 
-/* Notícias */
+/* Ultimas atualizações */
+.ultimas-atualizacoes {
+  max-width: 1280px;
+  margin: 0 auto 80px; 
+  padding: 0 24px;
+  width: 100%;
+}
+.ultimas-atualizacoes .header {
+  margin-bottom: 40px;
+}
 
 
+.ultimas-atualizacoes .container-update {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
 
+.ultimas-atualizacoes .card-update {
+  max-width: 175px;
+  text-align: center;
+}
 
+.card-update .gradient {
+  max-height: 238px;
+  max-width: 175px;
+  background: linear-gradient(180deg, rgba(6, 9, 15, 0) 0%, #06090F 100%);
+  margin-bottom: 8px;
+  z-index: 1;
+}
+
+.card-update .gradient span {
+  position: relative;
+  top: -30;
+}
+
+.card-update .gradient img {
+  position: relative;
+  z-index: -1;
+ /* background: linear-gradient(180deg, rgba(6, 9, 15, 0) 0%, #06090F 100%); */
+}
+
+.card-update::after {
+  content: '';
+  position: relative;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background: #00A3FF;
+
+  z-index: 50;
+}
+
+.cta-see-more {
+  text-align: center;
+}
+
+.cta-see-more .button {
+  background: #027ac0;
+  padding: 12px 52px;
+  border-radius: 4px;
+  color: #f9f9f9;
+  font-weight: 500;
+  transition: 1s ease;
+}
+
+.cta-see-more .button:hover {
+  background: #00a3ff;
+}
+
+@media screen and (max-width: 425px) {
+  .ultimas-atualizacoes {
+    margin-bottom: 0 auto 40px;
+  } 
+  .ultimas-atualizacoes .header {
+    margin-bottom: 20pxpx;
+  }
+  .ultimas-atualizacoes .card-update {
+    max-width: 140px;
+  }
+}
 
 /* Footer */
 footer {
+  background-color: #04060a;
   height: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  border-top: 1.5px normal #bfbfbf;
+  
+  border-top: 1.5px solid #151b26;
 }
